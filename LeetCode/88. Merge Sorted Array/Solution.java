@@ -6,14 +6,8 @@ public class Solution {
         int j = n - 1;
         int k = m + n - 1;
         while(j >= 0){
-            // System.out.println(Arrays.toString(nums1));
-            // System.out.println("i: " + nums1[i] + " ~ j: " + nums2[j]);
-            if(nums1[i] > nums2[j]){
-                nums1[k--] = nums1[i--];
-                
-            }else{
-                nums1[k--] = nums2[j--];
-            }
+            if(i >= 0 && nums1[i] > nums2[j]) nums1[k--] = nums1[i--];
+            else nums1[k--] = nums2[j--];
         }
     }
 
@@ -37,6 +31,7 @@ public class Solution {
 
         merge(nums1, m, nums2, n);
         System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
     }
     
 }
